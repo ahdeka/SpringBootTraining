@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: back
+  datasource:
+    # Use 'mem' for in-memory or 'file:./data/sampledb' for persistent file storage
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      # Enables the H2 web console (http://localhost:8080/h2-console)
+      enabled: true
+      # Optional: custom path for the console
+      path: /h2-console
+  jpa:
+    hibernate:
+      # 'update' automatically updates the schema; 'create-drop' is good for testing
+      ddl-auto: update
+    # Optional: show SQL queries in the logs for debugging
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
