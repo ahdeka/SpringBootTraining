@@ -33,7 +33,6 @@ public class Comment extends BaseEntity {
 
     private LocalDateTime deletedAt;
 
-    @Column(nullable = false)
     private int depth;
 
     @Builder
