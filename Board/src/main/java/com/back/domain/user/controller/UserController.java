@@ -25,13 +25,13 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<RsData<Void>> register(
+    public ResponseEntity<RsData<RegisterResponse>> register(
             @Valid @RequestBody RegisterRequest request
             ) {
 
-        userService.register(request);
+        RegisterResponse response = userService.register(request);
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(RsData.of("201", "회원가입이 완료됐습니다."));
+                .body(RsData.of("201", "회원가입이 완료됐습니다.", response));
     }
 }
