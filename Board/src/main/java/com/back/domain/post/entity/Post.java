@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import java.awt.*;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import static lombok.AccessLevel.PROTECTED;
 
